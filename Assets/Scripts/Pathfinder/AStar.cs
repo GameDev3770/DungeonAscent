@@ -41,18 +41,11 @@ public class AStar
         //opened.Add(startNode);
 
         while (opened.length > 0) {
-            if (opened.first == null) {
-
-            }
-
             Node ptr = opened.Push();
             closed.Add(ptr);
 
             if (ptr == targetNode) {
                 return this.TracePath(startNode, targetNode);
-            }
-            if (ptr.x == debug_coords[0] && ptr.y == debug_coords[1]) {
-
             }
             foreach (Node neighbour in ptr.Directions) {
                 CheckNeighour(neighbour, ptr, targetNode, opened, closed);
@@ -66,10 +59,6 @@ public class AStar
 
         float movementCost = current.gCost + current.GetDistance(neighbour);
         bool neighbourInOpened = opened.Contains(neighbour);
-        if (debug_coords[0] == neighbour.x && debug_coords[1] == neighbour.y) {
-
-        }
-
         if (movementCost < neighbour.gCost || !neighbourInOpened) {
             neighbour.gCost = movementCost;
             neighbour.hCost = neighbour.GetDistance(target);
