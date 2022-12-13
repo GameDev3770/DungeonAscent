@@ -35,6 +35,10 @@ public class Movement : MonoBehaviour
     void Move()
     {
         transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
+        if(Input.GetMouseButtonDown(0)){
+            animator.SetTrigger("Attacking");
+
+        }
 
         if(Input.GetKeyDown(KeyCode.W))
         {
