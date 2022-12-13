@@ -10,8 +10,7 @@ public class Enemy : MonoBehaviour
     GameObject Player;
 
     float maxticker = 100;
-    public float tick = 0;
-    public float[] testing = new float[2];
+    float tick = 0;
 
     private void Start() {
         this.Environment = GameObject.Find("Environment");
@@ -29,9 +28,9 @@ public class Enemy : MonoBehaviour
     private void FixedUpdate() {
         if (tick >= maxticker) {
             Vector3 vec = transform.position;
-            testing = MakeMove();
-            vec.x = testing[0];
-            vec.z = testing[1];
+            float[] temp = MakeMove();
+            vec.x = temp[0];
+            vec.z = temp[1];
             transform.position = vec;
             tick = 0;
         }
