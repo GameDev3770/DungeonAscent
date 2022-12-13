@@ -17,8 +17,11 @@ public class Movement : MonoBehaviour
     float rayLen = 1f;
     bool canMove;
 
+    Animator animator;
+
     void Start()
     {
+        animator = GetComponent<Animator>();
         currentDir = up;
         nextPos = Vector3.forward;
         destination = transform.position;
@@ -76,9 +79,16 @@ public class Movement : MonoBehaviour
                     destination = transform.position + nextPos;
                     direction = nextPos;
                     canMove = false;
+                    
                 }
             }
         }
+
+     
+        animator.SetBool("Moving",transform.position!=destination);
+        
+        
+
     }
 
     // check if player collided with an obstacle (wall, table, etc...) uses raycast
