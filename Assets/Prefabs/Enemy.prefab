@@ -2521,7 +2521,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3113715971813398547
 Transform:
   m_ObjectHideFlags: 0
@@ -3567,6 +3567,7 @@ GameObject:
   - component: {fileID: 3113715972255461602}
   - component: {fileID: 3113715972255461605}
   - component: {fileID: 3113715972255461600}
+  - component: {fileID: 1608126586223876982}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -3650,6 +3651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 3113715972255461602}
+  active: 0
 --- !u!65 &3113715972255461600
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3663,6 +3665,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.1055887, z: 0.6515834}
   m_Center: {x: -2.220446e-16, y: 0.9296247, z: -0.021937842}
+--- !u!114 &1608126586223876982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3113715972255461607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8be299cb4ccd4be1b049c394f83bbca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 2
 --- !u!1 &3113715972264738365
 GameObject:
   m_ObjectHideFlags: 0
