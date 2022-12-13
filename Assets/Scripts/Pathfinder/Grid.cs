@@ -113,6 +113,11 @@ public class Grid
             if (obj == DebugGameObject) {
 
             }
+            Vector3 temp_vec = obj.transform.position;
+            temp_vec.x = Mathf.Round(temp_vec.x * 1000) / 1000;
+            temp_vec.z = Mathf.Round(temp_vec.z * 1000) / 1000;
+            obj.transform.position = temp_vec;
+
             Node node = new Node(GetMiddlePoint(obj.transform), nodeScale / 2, GetLayerWeight(WalkableLayers, obj.layer));
             foreach (Layer mask in UnWalkableLayers) {
                 node.walkable = !(Physics.CheckSphere(new Vector3(node.x, 0, node.y), nodeScale / 2, mask.LayerMask));
@@ -130,29 +135,6 @@ public class Grid
             temp.transform.parent = Collider_Container.transform;
 
             GetMiddlePoint(obj.transform);
-            /*List<Vector3> FourCorners = GetFourCorners(obj);
-            float[] MinAndMax = GetMinMax(FourCorners);
-            for (float x = MinAndMax[0]; x < MinAndMax[1]; x += nodeScale) {
-                for (float y = MinAndMax[2]; y < MinAndMax[3]; y += nodeScale) {
-                    float[] middlePoint = new float[] { x + nodeScale / 2, y + nodeScale / 2 };
-                    Node node = new Node(middlePoint, nodeScale / 2, GetLayerWeight(WalkableLayers, obj.layer));
-                    foreach (Layer mask in UnWalkableLayers) {
-                        node.walkable = !(Physics.CheckSphere(new Vector3(node.x, 0, node.y), nodeScale / 2, mask.LayerMask));
-                        if (!node.walkable) {
-                            break;
-                        }
-                    }
-
-                    this.AddToDict(node);
-                    this.list.Add(node);
-
-                    GameObject temp = GameObject.Instantiate(NodeCollider);
-                    temp.GetComponent<TrackingNode>().node = node;
-                    temp.transform.position = new Vector3(node.x, obj.transform.position.y, node.y);
-                    temp.transform.parent = Collider_Container.transform;
-                }
-            }
-            */
         }
 
         foreach (Node node in list) {
@@ -206,6 +188,13 @@ public class Grid
 
     float[,] GetSurroundingCoordinates(Node node) {
 
+        float[,] temp = new float[4, 2] {
+            { node.x - nodeScale, node.y },
+            { node.x, node.y - nodeScale },
+            { node.x, node.y + nodeScale },
+            { node.x + nodeScale, node.y },
+        };
+
         return new float[4, 2] {
             //{ node.x - nodeScale, node.y - nodeScale },
             { node.x - nodeScale, node.y },
@@ -256,6 +245,7 @@ public class Grid
     }
     public Node GetNode(Vector3 worldPosition) {
         RaycastHit hit;
+        worldPosition.y += 0.1f;
         if (Physics.Raycast(worldPosition, Vector3.down, out hit, 2, 1 << LayerMask.NameToLayer("Floor"))) {
             GameObject node = hit.collider.gameObject;
             return hit.collider.gameObject.GetComponent<TrackingNode>().node;
@@ -328,3 +318,27 @@ public class Grid
             temp.transform.position = new Vector3(node.x, obj.transform.position.y, node.y);
             temp.transform.parent = Collider_Container.transform;
  */
+
+/*List<Vector3> FourCorners = GetFourCorners(obj);
+            float[] MinAndMax = GetMinMax(FourCorners);
+            for (float x = MinAndMax[0]; x < MinAndMax[1]; x += nodeScale) {
+                for (float y = MinAndMax[2]; y < MinAndMax[3]; y += nodeScale) {
+                    float[] middlePoint = new float[] { x + nodeScale / 2, y + nodeScale / 2 };
+                    Node node = new Node(middlePoint, nodeScale / 2, GetLayerWeight(WalkableLayers, obj.layer));
+                    foreach (Layer mask in UnWalkableLayers) {
+                        node.walkable = !(Physics.CheckSphere(new Vector3(node.x, 0, node.y), nodeScale / 2, mask.LayerMask));
+                        if (!node.walkable) {
+                            break;
+                        }
+                    }
+
+                    this.AddToDict(node);
+                    this.list.Add(node);
+
+                    GameObject temp = GameObject.Instantiate(NodeCollider);
+                    temp.GetComponent<TrackingNode>().node = node;
+                    temp.transform.position = new Vector3(node.x, obj.transform.position.y, node.y);
+                    temp.transform.parent = Collider_Container.transform;
+                }
+            }
+            */
