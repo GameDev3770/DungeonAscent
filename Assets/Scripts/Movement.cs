@@ -18,6 +18,7 @@ public class Movement : MonoBehaviour
     bool canMove;
 
     Animator animator;
+    public Health health;
 
     void Start()
     {
@@ -39,33 +40,29 @@ public class Movement : MonoBehaviour
             animator.SetTrigger("Attacking");
         }
 
-        if(Input.GetKeyDown(KeyCode.W))
+        if(Input.GetKeyDown(KeyCode.W) && !OnLava(Vector3.forward))
         {
             nextPos = Vector3.forward;
             currentDir = up;
             canMove = true;
-            OnLava();
         }
-        if(Input.GetKeyDown(KeyCode.A))
+        if(Input.GetKeyDown(KeyCode.A) && !OnLava(Vector3.left))
         {
             nextPos = Vector3.left;
             currentDir = left;
             canMove = true;
-            OnLava();
         }
-        if(Input.GetKeyDown(KeyCode.S))
+        if(Input.GetKeyDown(KeyCode.S) && !OnLava(Vector3.back))
         {
             nextPos = Vector3.back;
             currentDir = down;
             canMove = true;
-            OnLava();
         }
-        if(Input.GetKeyDown(KeyCode.D))
+        if(Input.GetKeyDown(KeyCode.D) && !OnLava(Vector3.right))
         {
             nextPos = Vector3.right;
             currentDir = right;
             canMove = true;
-            OnLava();
         }
 
         if(Vector3.Distance(destination, transform.position) <= 0.00001f)
@@ -101,19 +98,18 @@ public class Movement : MonoBehaviour
         return true;
     }
 
-    bool OnLava()
+    bool OnLava(Vector3 offset)
     {
-        Ray myRay = new Ray(transform.position + new Vector3(0f,0.25f,1.5f), -transform.up);
+        Ray myRay = new Ray(transform.position + offset + new Vector3(0f, 1f, 0f),  -transform.up);
+        Debug.DrawRay(transform.position + offset + new Vector3(0f, 0.5f, 0f),  -transform.up, Color.green, 3);
         RaycastHit hit;
 
         if(Physics.Raycast(myRay, out hit, rayLen))
         {
-            if(hit.collider.tag == "Lava")
-            {
-                Debug.Log(true);
-                return true;
-            }
+            Debug.Log(false);
+            return false;
         }
-        return false;
+        Debug.Log(true);
+        return true;
     }
 }
