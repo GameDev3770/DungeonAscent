@@ -6,10 +6,14 @@ public class Enemy : MonoBehaviour
 {
     public Health health;
 
+
     void Update()
     {
+        Debug.Log(health.currentHealth);
         if(health.currentHealth <= 0)
         {
+            GameManager.Instance.player.GetComponent<Body>().changeActive(GetComponent<Body>().active);
+            Debug.Log("destroy");
             Destroy(gameObject);
         }
     }
