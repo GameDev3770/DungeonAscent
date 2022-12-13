@@ -38,11 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-<<<<<<< HEAD
   m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
-=======
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
->>>>>>> e9434297f5fa9a3ed1f8627688c1a862b7ada51c
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5034,70 +5030,6 @@ Transform:
 --- !u!1001 &381400756
 PrefabInstance:
   m_ObjectHideFlags: 0
-<<<<<<< HEAD
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1046276885}
-    m_Modifications:
-    - target: {fileID: 1283514324608574, guid: 8c6c293aa06b84544b042f2a8bbdd157, type: 3}
-      propertyPath: m_Name
-      value: FX_Fire_Small_01
-      objectReference: {fileID: 0}
-    - target: {fileID: 4405072184147646, guid: 8c6c293aa06b84544b042f2a8bbdd157, type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4405072184147646, guid: 8c6c293aa06b84544b042f2a8bbdd157, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 13.535349
-      objectReference: {fileID: 0}
-    - target: {fileID: 4405072184147646, guid: 8c6c293aa06b84544b042f2a8bbdd157, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.010000229
-      objectReference: {fileID: 0}
-    - target: {fileID: 4405072184147646, guid: 8c6c293aa06b84544b042f2a8bbdd157, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4.822673
-      objectReference: {fileID: 0}
-    - target: {fileID: 4405072184147646, guid: 8c6c293aa06b84544b042f2a8bbdd157, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4405072184147646, guid: 8c6c293aa06b84544b042f2a8bbdd157, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4405072184147646, guid: 8c6c293aa06b84544b042f2a8bbdd157, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4405072184147646, guid: 8c6c293aa06b84544b042f2a8bbdd157, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4405072184147646, guid: 8c6c293aa06b84544b042f2a8bbdd157, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4405072184147646, guid: 8c6c293aa06b84544b042f2a8bbdd157, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4405072184147646, guid: 8c6c293aa06b84544b042f2a8bbdd157, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 199252515414820236, guid: 8c6c293aa06b84544b042f2a8bbdd157, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 199901687893993512, guid: 8c6c293aa06b84544b042f2a8bbdd157, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8c6c293aa06b84544b042f2a8bbdd157, type: 3}
-=======
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -5228,7 +5160,6 @@ MonoBehaviour:
   testing:
   - 0
   - 0
->>>>>>> e9434297f5fa9a3ed1f8627688c1a862b7ada51c
 --- !u!1001 &382984493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6672,11 +6603,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-<<<<<<< HEAD
-=======
   - {fileID: 546801817}
   - {fileID: 375593850}
->>>>>>> e9434297f5fa9a3ed1f8627688c1a862b7ada51c
   - {fileID: 879834855}
   - {fileID: 699318691}
   m_Father: {fileID: 0}
@@ -10700,11 +10628,7 @@ Transform:
   - {fileID: 402224819}
   - {fileID: 652882544}
   m_Father: {fileID: 492439705}
-<<<<<<< HEAD
-  m_RootOrder: 0
-=======
   m_RootOrder: 2
->>>>>>> e9434297f5fa9a3ed1f8627688c1a862b7ada51c
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &879834856
 MonoBehaviour:

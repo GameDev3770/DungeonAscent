@@ -29,17 +29,9 @@ public class Enemy : MonoBehaviour
         }
     }
 
-<<<<<<< HEAD
-    private void FixedUpdate()
-    {
-        if (tick >= maxticker)
-        {
-            Vector3 vec = transform.position;
-=======
     private void FixedUpdate() {
         if (tick >= maxticker) {
             //Vector3 vec = transform.position;
->>>>>>> e9434297f5fa9a3ed1f8627688c1a862b7ada51c
             float[] temp = MakeMove();
             GetComponent<MovementEnemy>().UpdateMove(temp);
             //vec.x = temp[0];
