@@ -29,9 +29,15 @@ public class PathFinderAPI : MonoBehaviour
     public List<Node> GetPathing(Vector3 StartObject, Vector3 EndObject) {
         return this.GetPathing(GetNode(StartObject), GetNode(EndObject));
     }
-    public List<Node> GetPathing(GameObject StartObject, Vector3 EndObject)     { return this.GetPathing(GetNode(StartObject), GetNode(EndObject)); }
-    public List<Node> GetPathing(Vector3 StartObject, GameObject EndObject)     { return this.GetPathing(GetNode(StartObject), GetNode(EndObject)); }
-    public List<Node> GetPathing(GameObject StartObject, GameObject EndObject)  { return this.GetPathing(GetNode(StartObject), GetNode(EndObject)); }
+    public List<Node> GetPathing(GameObject StartObject, Vector3 EndObject)     { 
+        return this.GetPathing(GetNode(StartObject), GetNode(EndObject)); 
+    }
+    public List<Node> GetPathing(Vector3 StartObject, GameObject EndObject)     { 
+        return this.GetPathing(GetNode(StartObject), GetNode(EndObject)); 
+    }
+    public List<Node> GetPathing(GameObject StartObject, GameObject EndObject)  { 
+        return this.GetPathing(GetNode(StartObject), GetNode(EndObject));
+    }
 
     public List<Node> GetPathing(Node StartNode, Node EndNode) {
         try {

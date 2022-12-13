@@ -12,5 +12,9 @@ public class GameManager : MonoBehaviour
     private void Awake(){
         Instance = this;
     }
+    public bool bossKey;
+    public bool key1Key;
+    public bool key2Key;
+
 
 }

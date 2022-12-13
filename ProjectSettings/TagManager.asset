@@ -10,6 +10,11 @@ TagManager:
   - Lava
   - Environment
   - Enemy
+  - Lava2
+  - bossKey
+  - key1
+  - lava3
+  - Lava3
   layers:
   - Default
   - TransparentFX
@@ -19,7 +24,7 @@ TagManager:
   - UI
   - Floor
   - Decor
-  - 
+  - Entity
   - 
   - 
   - 
