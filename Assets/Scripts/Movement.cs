@@ -35,9 +35,8 @@ public class Movement : MonoBehaviour
     void Move()
     {
         transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
-        if(Input.GetMouseButtonDown(0)){
+        if(Input.GetMouseButtonDown(1)){
             animator.SetTrigger("Attacking");
-
         }
 
         if(Input.GetKeyDown(KeyCode.W))
@@ -53,7 +52,6 @@ public class Movement : MonoBehaviour
             currentDir = left;
             canMove = true;
             OnLava();
-
         }
         if(Input.GetKeyDown(KeyCode.S))
         {
@@ -61,7 +59,6 @@ public class Movement : MonoBehaviour
             currentDir = down;
             canMove = true;
             OnLava();
-
         }
         if(Input.GetKeyDown(KeyCode.D))
         {
@@ -69,7 +66,6 @@ public class Movement : MonoBehaviour
             currentDir = right;
             canMove = true;
             OnLava();
-
         }
 
         if(Vector3.Distance(destination, transform.position) <= 0.00001f)
@@ -83,16 +79,10 @@ public class Movement : MonoBehaviour
                     destination = transform.position + nextPos;
                     direction = nextPos;
                     canMove = false;
-                    
                 }
             }
         }
-
-     
         animator.SetBool("Moving",transform.position!=destination);
-        
-        
-
     }
 
     // check if player collided with an obstacle (wall, table, etc...) uses raycast
