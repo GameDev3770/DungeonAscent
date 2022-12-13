@@ -28,6 +28,15 @@ public class Movement : MonoBehaviour
         destination = transform.position;
     }
 
+    void OnTriggerStay(Collider c){
+
+        if(c.CompareTag("Lava3") || c.CompareTag("Lava2"))
+        {
+            Debug.Log("on the lava");     //now you can do ur health-- here, and as long as the player stays inside the lava place, it will repeat.      
+        }
+    }
+
+
     void Update()
     {
         Move();
@@ -98,7 +107,11 @@ public class Movement : MonoBehaviour
         return true;
     }
 
+<<<<<<< HEAD
     bool OnLava(Vector3 offset)
+=======
+     bool OnLava()
+>>>>>>> e9434297f5fa9a3ed1f8627688c1a862b7ada51c
     {
         Ray myRay = new Ray(transform.position + offset + new Vector3(0f, 1f, 0f),  -transform.up);
         Debug.DrawRay(transform.position + offset + new Vector3(0f, 0.5f, 0f),  -transform.up, Color.green, 3);
@@ -112,4 +125,6 @@ public class Movement : MonoBehaviour
         Debug.Log(true);
         return true;
     }
+    
+
 }

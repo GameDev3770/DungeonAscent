@@ -20,21 +20,31 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(health.currentHealth);
         if(health.currentHealth <= 0)
         {
+            GameManager.Instance.player.GetComponent<Body>().changeActive(GetComponent<Body>().active);
+            Debug.Log("destroy");
             Destroy(gameObject);
         }
     }
 
+<<<<<<< HEAD
     private void FixedUpdate()
     {
         if (tick >= maxticker)
         {
             Vector3 vec = transform.position;
+=======
+    private void FixedUpdate() {
+        if (tick >= maxticker) {
+            //Vector3 vec = transform.position;
+>>>>>>> e9434297f5fa9a3ed1f8627688c1a862b7ada51c
             float[] temp = MakeMove();
-            vec.x = temp[0];
-            vec.z = temp[1];
-            transform.position = vec;
+            GetComponent<MovementEnemy>().UpdateMove(temp);
+            //vec.x = temp[0];
+            //vec.z = temp[1];
+            //transform.position = vec;
             tick = 0;
             //animation
         }
