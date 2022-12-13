@@ -27,11 +27,12 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate() {
         if (tick >= maxticker) {
-            Vector3 vec = transform.position;
+            //Vector3 vec = transform.position;
             float[] temp = MakeMove();
-            vec.x = temp[0];
-            vec.z = temp[1];
-            transform.position = vec;
+            GetComponent<MovementEnemy>().UpdateMove(temp);
+            //vec.x = temp[0];
+            //vec.z = temp[1];
+            //transform.position = vec;
             tick = 0;
         }
         tick++;
