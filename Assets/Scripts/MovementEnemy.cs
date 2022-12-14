@@ -26,7 +26,6 @@ public class MovementEnemy : MonoBehaviour
         nextPos = Vector3.forward;
         destination = transform.position;
     }
-
     void Update()
     {
         Move();
@@ -42,12 +41,9 @@ public class MovementEnemy : MonoBehaviour
 
             if(canMove)
             {
-                if(Valid())
-                {
-                    destination = transform.position + nextPos;
-                    direction = nextPos;
-                    canMove = false;
-                }
+                destination = transform.position + nextPos;
+                direction = nextPos;
+                canMove = false;
             }
         }
         animator.SetBool("Moving",transform.position!=destination);
@@ -56,28 +52,29 @@ public class MovementEnemy : MonoBehaviour
     public void UpdateMove(float[] newPos) {
         float dif_x = newPos[0] - transform.position.x;
         float dif_y = newPos[1] - transform.position.z;
-        Vector3 newCoords = new Vector3(newPos[0], transform.position.y, newPos[1]);
+        // Vector3 newCoords = new Vector3(newPos[0], transform.position.y, newPos[1]);
+
         if (dif_x > 0) {
-            nextPos = newCoords;
-            currentDir = up;
+            nextPos = Vector3.right;
+            currentDir = left;
             canMove = true;
         }
         else if (dif_x < 0) {
-            nextPos = newCoords;
-            currentDir = down;
+            nextPos = Vector3.left;
+            currentDir = left;
             canMove = true;
         }
         else if (dif_y > 0) {
-            nextPos = newCoords;
-            currentDir = left;
+            nextPos = Vector3.forward;
+            currentDir = up;
             canMove = true;
         } 
         else if (dif_y < 0) {
-            nextPos = newCoords;
-            currentDir = right;
+            nextPos = Vector3.back;
+            currentDir = down;
             canMove = true;
         }
-
+        // Move();
     }
 
     // check if player collided with an obstacle (wall, table, etc...) uses raycast

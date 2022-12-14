@@ -8,12 +8,14 @@ public class Enemy : MonoBehaviour
 
     GameObject Environment;
     GameObject Player;
+    Animator animator;
 
     float maxticker = 100;
-    float tick = 0;
+    public float tick = 0;
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         this.Environment = GameObject.Find("Environment");
         this.Player = GameObject.Find("Player");
     }
