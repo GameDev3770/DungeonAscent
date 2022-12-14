@@ -5,6 +5,7 @@ using UnityEngine;
 public class Body : MonoBehaviour
 {
     public int active;
+    public Health health;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,7 @@ public class Body : MonoBehaviour
         transform.GetChild(active).gameObject.SetActive(false);
         transform.GetChild(newActive).gameObject.SetActive(true);
         active = newActive;
+        health.TakeDamage(-25);
 
     }
 }

@@ -85,6 +85,7 @@ public class Movement : MonoBehaviour
                     destination = transform.position + nextPos;
                     direction = nextPos;
                     canMove = false;
+                    health.TakeDamage(1);
                 }
             }
         }
